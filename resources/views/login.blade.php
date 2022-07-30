@@ -16,13 +16,24 @@
 <body>
 
 <div class="container">
-    <form class="form" method="post" action={{route("veriEkle")}} id="form" >
+    <form class="form" method="post" action={{route("kategoriVeriEkle")}} id="form" >
         @csrf
         <a id="title"><h1 class="form__title">Dairy NRC</h1></a>
         <div class="form__input-group">
-            <input type="text" name="feed_name" class="form__input" autofocus placeholder="Feed name"  >
+            <input type="text" name="category_name" class="form__input" autofocus placeholder="Category name"  >
         </div>
         <button class="form__button" type="submit" id="enterPage">Veri Ekle</button>
+    </form>
+</div>
+
+<div class="container">
+    <form class="form" method="get" action={{route("sil")}} id="form" >
+        @csrf
+        <a id="title"><h1 class="form__title">Dairy NRC</h1></a>
+        <div class="form__input-group">
+            <input type="text" name="feed_name" class="form__input" autofocus placeholder="Feed id"  >
+        </div>
+        <button class="form__button" type="submit" id="enterPage">Veri Sil</button>
     </form>
 </div>
 

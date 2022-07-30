@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupResource;
 use App\Http\Controllers\ControllerFeed;
+use App\Http\Controllers\ControllerCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,11 +47,19 @@ Route::controller(ControllerFeed::class)->group(function (){
     Route::get("guncelle/{id?}/{yeniVeri?}", [ControllerFeed::class, 'update'])->name('guncelle');
     // PARAMETRE ALAN FONKSİYONLARDA BU ŞEKİLDE URL DEN VERİNCE FONKSİYONUN PARAMETRESİNE DÜŞÜYOR.
 
-
-
-
-
-
     Route::post("post", [ControllerFeed::class, 'add'])->name('veriEkle');
 
 });
+
+Route::controller(ControllerCategory::class)->group(function (){
+    Route::get("kategoriListele", [ControllerCategory::class, 'showAll'])->name('kategoriListele');
+
+    Route::get("kategoriListele/{id?}", [ControllerCategory::class, 'show'])->name('kategoriTekliGetir');
+    Route::get("kategoriSil/{id?}", [ControllerCategory::class, 'delete'])->name('kategoriSil');
+    Route::get("kategoriGuncelle/{id?}/{yeniVeri?}", [ControllerCategory::class, 'update'])->name('kategoriGuncelle');
+    // PARAMETRE ALAN FONKSİYONLARDA BU ŞEKİLDE URL DEN VERİNCE FONKSİYONUN PARAMETRESİNE DÜŞÜYOR.
+
+    Route::post("post", [ControllerCategory::class, 'add'])->name('kategoriVeriEkle');
+
+});
+
