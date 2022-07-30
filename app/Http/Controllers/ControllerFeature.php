@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\ModelFeature;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 
@@ -30,5 +31,12 @@ class ControllerFeature extends Controller
         ModelFeature::whereId($id)->update([
             "id"=>"$yeniVeri",
         ]);
+    }
+
+    public function denemePost($id){
+        $feature = ModelFeature::find($id);
+        $gelen = request() -> get();
+        $feature-> feed_name = $gelen -> feed_name;
+        
     }
 }

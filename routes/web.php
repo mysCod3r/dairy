@@ -61,5 +61,9 @@ Route::controller(ControllerCategory::class)->group(function (){
 
     Route::post("post", [ControllerCategory::class, 'add'])->name('kategoriVeriEkle');
 
+
 });
+
+Route::get("aaa/{id?}", [\App\Http\Controllers\ControllerFeature::class, 'deneme']);
+
 
