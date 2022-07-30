@@ -14,7 +14,7 @@ class ControllerFeed extends Controller
         return ModelFeed::get();
     }
 
-    public function show($id){
+    public function show(Request $id){
         return ModelFeed::find($id);
     }
 
