@@ -44,6 +44,6 @@
    </div>
       @include("pages\main-parts\sidebar")
    </div>
-    <script src="{{URL::asset('/js/main.js')}}" charset="utf-8"></script>
+    @include("pages\main-parts\js")
   </body>
 </html>

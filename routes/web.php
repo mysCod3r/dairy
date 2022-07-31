@@ -30,7 +30,7 @@ Route::get('/', function () {
 Route::get('/signup', [Feed::class, 'signUp'])->name('signup');
  */
 
-Route::view('/', "pages/feeds")->name("anasayfa");
+Route::view('/', "pages/signup")->name("anasayfa");
 
 Route::controller(SignupResource::class)->group(function () {
     Route::get('signup', [SignupResource::class, 'index'])->name('signup');
@@ -39,9 +39,8 @@ Route::controller(SignupResource::class)->group(function () {
 });
 
 
-Route::controller(ControllerFeed::class)->group(function (){
+    Route::controller(ControllerFeed::class)->group(function (){
     Route::get("listele", [ControllerFeed::class, 'showAll'])->name('listele');
-
     Route::post("listele/{id?}", [ControllerFeed::class, 'show'])->name('tekliGetir');
     Route::get("sil/{id?}", [ControllerFeed::class, 'delete'])->name('sil');
     Route::get("guncelle/{id?}/{yeniVeri?}", [ControllerFeed::class, 'update'])->name('guncelle');
@@ -65,5 +64,3 @@ Route::controller(ControllerCategory::class)->group(function (){
 });
 
 Route::get("aaa/{id?}", [\App\Http\Controllers\ControllerFeature::class, 'deneme']);
-
-
