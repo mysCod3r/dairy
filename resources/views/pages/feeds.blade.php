@@ -20,7 +20,9 @@
        <!-- FeedName-CONTAINER -->
        <div class="feed-container container">
          <div class="feed-name block">
-            <p>dsas</p><hr>
+            @foreach($feeds as $feed)
+                <p>{{$feed->feed_name}} </p><hr>
+             @endforeach
          </div>
        </div>
        <!-- Features-CONTAINER -->
@@ -44,6 +46,6 @@
    </div>
       @include("pages\main-parts\sidebar")
    </div>
-    <script src="{{URL::asset('/js/main.js')}}" charset="utf-8"></script>
+    <script src="{{URL::asset('/js/app.js')}}" charset="utf-8"></script>
   </body>
 </html>

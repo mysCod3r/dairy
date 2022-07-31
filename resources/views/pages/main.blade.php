@@ -15,6 +15,6 @@
     @include("pages\main-parts\sidebar")
  </div>
 
-  <script src="{{URL::asset('/js/main.js')}}" charset="utf-8"></script>
+  <script src="{{URL::asset('/js/app.js')}}" charset="utf-8"></script>
 </body>
 </html>
