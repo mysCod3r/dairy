@@ -12,29 +12,32 @@
        <!--İçerik kısmı-->
        <div class="login-box">
   <h2>Dairy NRC</h2>
-  <form>
+  <form action="{{route("deneme")}}" method="post">
+      @csrf
     <div class="user-box">
-      <input type="email" name="" required="">
+      <input type="email" name="email" required="">
       <label>E-mail</label>
     </div>
     <div class="user-box">
-      <input type="text" name="" required="">
+      <input type="text" name="username" required="">
       <label>Kullanıcı adı</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="password" required="">
       <label>Şifre</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="passwordVerify" required="">
       <label>Şifre</label>
     </div>
-    <a href="#">
+      <a href="#">
+          <button type="submit">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Kaydol
+          </button>
     </a>
   </form>
 </div>
@@ -43,6 +46,6 @@
       @include("pages\main-parts\sidebar")
     </div>
 
-    @include("pages\main-parts\js")
+    <script src="{{URL::asset('/js/app.js')}}" charset="utf-8"></script>
   </body>
 </html>

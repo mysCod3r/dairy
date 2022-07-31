@@ -10,8 +10,14 @@ use Illuminate\Support\Facades\Redirect;
 class ControllerFeed extends Controller
 {
 
+
+    public function index(){
+        return view("pages/feeds");
+    }
+
     public function showAll(){
-        return ModelFeed::get();
+        $feeds = ModelFeed::get();
+        return view("pages.feeds", ['feeds' => $feeds]);
     }
 
     public function show(Request $id){

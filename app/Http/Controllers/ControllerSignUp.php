@@ -2,28 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory as FactoryAlias;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class SignupResource extends Controller
+class ControllerSignUp extends Controller
 {
 
     public function index(): Application|FactoryAlias|View
     {
-        return view('signup');
+        return view('pages/signup');
     }
 
     public function create(Response $response)
     {
 
+
     }
 
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            "name" => $request["username"],
+            "email" => $request["email"],
+            "password" => $request["password"],
+        ]);
+
+        return $user;
+
     }
 
     public function show($id)

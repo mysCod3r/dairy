@@ -8,31 +8,31 @@
     <!--menu item-->
     <ul>
       <li>
-          <a href="#" >
+          <a href="{{route("anasayfa")}}" >
               <span class="icon"><i class="fas fa-home"></i></span>
               <span class="item">Anasayfa</span>
           </a>
       </li>
       <li>
-          <a href="#">
+          <a href="{{route("goFeeds")}}">
               <span class="icon"><i class="fa-solid fa-reel"></i></span>
               <span class="item">Yemler</span>
           </a>
       </li>
       <li>
-          <a href="#">
+          <a href="{{route("goAbout")}}">
               <span class="icon"></span>
               <span class="item">Hakkımızda</span>
           </a>
       </li>
       <li>
-          <a href="#">
+          <a href="{{route("goLogin")}}">
               <span class="icon"></span>
               <span class="item">Giriş yap</span>
           </a>
       </li>
       <li>
-          <a href="#">
+          <a href="{{route("goSignUp")}}">
               <span class="icon"></span>
               <span class="item">Kaydol</span>
           </a>

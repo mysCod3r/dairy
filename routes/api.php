@@ -17,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
+
+Route::controller(ControllerFeed::class)->group(function (){
+    Route::get("/feeds", [ControllerFeed::class, 'index'])->name('goFeeds');
+
+    Route::get("listele", [ControllerFeed::class, 'showAll'])->name('listele');
+
+    Route::get("listele/{id?}", [ControllerFeed::class, 'show'])->name('tekliGetir');
+    Route::get("sil/{id?}", [ControllerFeed::class, 'delete'])->name('sil');
+    Route::get("guncelle/{id?}/{yeniVeri?}", [ControllerFeed::class, 'update'])->name('guncelle');
+    // PARAMETRE ALAN FONKSİYONLARDA BU ŞEKİLDE URL DEN VERİNCE FONKSİYONUN PARAMETRESİNE DÜŞÜYOR.
+    Route::post("post", [ControllerFeed::class, 'add'])->name('veriEkle');
+
+});
+
+ */
+
+
