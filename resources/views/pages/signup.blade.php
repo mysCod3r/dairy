@@ -15,37 +15,34 @@
   <form action="{{route("deneme")}}" method="post">
       @csrf
     <div class="user-box">
-      <input type="email" name="email" required="">
+      <input type="email" name="email" required="" autocomplete="off" >
       <label>E-mail</label>
     </div>
     <div class="user-box">
-      <input type="text" name="username" required="">
+      <input type="text" name="username" required="" autocomplete="off">
       <label>Kullanıcı adı</label>
     </div>
     <div class="user-box">
-      <input type="password" name="password" required="">
+      <input type="password" name="password" required="" autocomplete="off">
       <label>Şifre</label>
     </div>
     <div class="user-box">
-      <input type="password" name="passwordVerify" required="">
+      <input type="password" name="passwordVerify" required="" autocomplete="off">
       <label>Şifre</label>
     </div>
-      <a href="#">
-          <button type="submit">
+      <button href="#">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Kaydol
-          </button>
-    </a>
+    </button>
   </form>
 </div>
      </div>
     </div>
       @include("pages\main-parts\sidebar")
     </div>
-
     <script src="{{URL::asset('/js/app.js')}}" charset="utf-8"></script>
   </body>
 </html>

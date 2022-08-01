@@ -10,26 +10,6 @@
         @include("pages\main-parts\upbar")
         <div class="container">
             <!--İçerik kısmı-->
-            <div class="login-box">
-                <h2>Dairy NRC</h2>
-                <form>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                        <label>ssssssssssssssssssss</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="password" name="" required="">
-                        <label>dddddddddddddddddddd</label>
-                    </div>
-                    <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Giriş
-                    </a>
-                </form>
-            </div>
         </div>
     </div>
     @include("pages\main-parts\sidebar")

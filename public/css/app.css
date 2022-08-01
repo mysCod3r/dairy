@@ -2,7 +2,6 @@
 a{
   color: white;
 }
-
 *{
 list-style: none;
 text-decoration: none;
@@ -32,13 +31,7 @@ margin-bottom: 30px;
 text-align: center;
 }
 
-.wrapper .sidebar .profile img{
-display: block;
-width: 100px;
-height: 100px;
- border-radius: 50%;
-margin: 0 auto;
-}
+
 
 .wrapper .sidebar .profile h3{
 color: #ffffff;
@@ -239,7 +232,7 @@ width: 100%;
 	overflow: auto;
   border: 2px solid rgb(111, 1, 78);
 }
-.feed-name p{
+.feed-name , .selected-feed  p{
   margin-left: 8px;
 }
 	/******************************************** Feeds MIDDLE CONTAINER *****************************************/
@@ -340,36 +333,37 @@ width: 100%;
   font-size: 12px;
 }
 
-.login-box form a {
+.login-box form button {
+  border: none;
+  background-color: rgb(5, 68, 104);
   position: relative;
   display: inline-block;
   padding: 10px 20px;
   color: #03e9f4;
   font-size: 16px;
   text-decoration: none;
-  text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
   letter-spacing: 4px
 }
 
-.login-box a:hover {
+.login-box button:hover {
   background: #03e9f4;
   color: #fff;
-  border-radius: 5px;
+  border: 0px;
   box-shadow: 0 0 5px #03e9f4,
               0 0 25px #03e9f4,
               0 0 50px #03e9f4,
               0 0 100px #03e9f4;
 }
 
-.login-box a span {
+.login-box button span {
   position: absolute;
   display: block;
 }
 
-.login-box a span:nth-child(1) {
+.login-box button span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -387,7 +381,7 @@ width: 100%;
   }
 }
 
-.login-box a span:nth-child(2) {
+.login-box button span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -406,7 +400,7 @@ width: 100%;
   }
 }
 
-.login-box a span:nth-child(3) {
+.login-box button span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -425,7 +419,7 @@ width: 100%;
   }
 }
 
-.login-box a span:nth-child(4) {
+.login-box button span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;

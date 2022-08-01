@@ -14,20 +14,20 @@
   <h2>Dairy NRC</h2>
   <form>
     <div class="user-box">
-      <input type="text" name="" required="">
+      <input type="text" name="" required="" autocomplete="off">
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="" required="" autocomplete="off">
       <label>Password</label>
     </div>
-    <a href="#">
+    <button >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Giriş
-    </a>
+    </button>
   </form>
 </div>
      </div>
