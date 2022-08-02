@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     @include("pages\main-parts\head")
-    <title>Dairy NRC - Yemler </title>
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <title>Dairy NRC - Yemler </title>
   </head>
   <body>
     <div class="wrapper">
@@ -21,8 +22,9 @@
        <div class="feed-container container">
          <div class="feed-name block">
             @foreach($feeds as $feed)
-                <p id="forMenu{{$feed->id}}">{{$feed->feed_name}} </p><hr>
+                <a id="{{$feed->id}}" ondblclick="itemDoubleClick({{$feed}})" >{{$feed->feed_name}}</a><hr>
              @endforeach
+
          </div>
        </div>
        <!-- Features-CONTAINER -->
@@ -39,7 +41,7 @@
         <!--Selected-CONTAINER -->
         <div class="selected-container container">
           <div class="selected-feed block">
-            <p id="selectedFeed"></p><hr>
+            <p  id="selectedFeed"></p><hr>
           </div>
       </div>
      <button class="feed_add" style="vertical-align:middle"><span>Ekle</span></button>
@@ -48,5 +50,7 @@
       @include("pages\main-parts\sidebar")
    </div>
     <script src="{{URL::asset('/js/app.js')}}" charset="utf-8"></script>
+    </div>
+
   </body>
 </html>
