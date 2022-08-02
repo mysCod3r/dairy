@@ -10,12 +10,16 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Open Sans', sans-serif;
 }
-
+a , li{
+  cursor: pointer;
+}
 body{
 background: beige;
 }
 
+
 .wrapper .sidebar{
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
 background: rgb(5, 68, 104);
 position: fixed;
 top: 0;
@@ -84,6 +88,7 @@ transition: all 0.5s ease;
 }
 
 .wrapper .section .top_navbar{
+box-shadow: 0 15px 25px rgba(0,0,0,.2);
 background: rgb(5, 68, 104);
 height: 50px;
 display: flex;
@@ -98,7 +103,7 @@ color: #f4fbff;
 }
 
 .wrapper .section .top_navbar .hamburger a:hover{
-color: #a2ecff;
+color: black;
 }
 
 .wrapper .section .index-container{

@@ -22,7 +22,7 @@
        <div class="feed-container container">
          <div class="feed-name block">
             @foreach($feeds as $feed)
-                <a id="{{$feed->id}}" ondblclick="itemDoubleClick({{$feed}})" >{{$feed->feed_name}}</a><hr>
+                <a id="{{$feed->id}}a" onclick="itemSingleClick({{$feed}})" ondblclick="itemDoubleClick({{$feed}})">{{$feed->feed_name}}</a><hr>
              @endforeach
 
          </div>
@@ -32,16 +32,19 @@
             <div class="feature block">
               <div class="leftTextarea">
                 <textarea name="name" rows="2" cols="15">Feed Name</textarea>
+                <textarea name="name" rows="2" cols="15">Price</textarea>
+
                </div>
               <div class="rightTextarea">
                 <textarea name="name" rows="2" cols="15" id="feedname"></textarea>
+                <textarea name="name" rows="2" cols="15" id="price"></textarea>
               </div>
             </div>
         </div>
         <!--Selected-CONTAINER -->
         <div class="selected-container container">
           <div class="selected-feed block">
-            <p  id="selectedFeed"></p><hr>
+            <p  id="selectedFeed" class="selectedFeed"></p><hr>
           </div>
       </div>
      <button class="feed_add" style="vertical-align:middle"><span>Ekle</span></button>
