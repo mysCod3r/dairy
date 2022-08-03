@@ -26,13 +26,13 @@
           </a>
       </li>
       <li>
-          <a href="{{route("goLogin")}}">
+          <a href="{{route("login")}}">
               <span class="icon"></span>
               <span class="item">Giriş yap</span>
           </a>
       </li>
       <li>
-          <a href="{{route("goSignUp")}}">
+          <a href="{{route("register")}}">
               <span class="icon"></span>
               <span class="item">Kaydol</span>
           </a>

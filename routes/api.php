@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Backend\BackendFeedCategoryController;
+use App\Http\Controllers\Backend\BackendFeedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,24 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function (){
+    Route::apiResource('feedcategory', BackendFeedCategoryController::class);
+
+    Route::controller(BackendFeedController::class)->group(function (){
+        Route::get('feed','index');
+        Route::post('feed','store');
+        Route::get('feed/{feed}','show');
+        Route::put('feed/{feed}','update');
+        Route::delete('feed/{feed}','destroy');
+        Route::get('feed/by-category/{category}','byCategory');
+    });
 });
-/*
-
-Route::controller(ControllerFeed::class)->group(function (){
-    Route::get("/feeds", [ControllerFeed::class, 'index'])->name('goFeeds');
-
-    Route::get("listele", [ControllerFeed::class, 'showAll'])->name('listele');
-
-    Route::get("listele/{id?}", [ControllerFeed::class, 'show'])->name('tekliGetir');
-    Route::get("sil/{id?}", [ControllerFeed::class, 'delete'])->name('sil');
-    Route::get("guncelle/{id?}/{yeniVeri?}", [ControllerFeed::class, 'update'])->name('guncelle');
-    // PARAMETRE ALAN FONKSİYONLARDA BU ŞEKİLDE URL DEN VERİNCE FONKSİYONUN PARAMETRESİNE DÜŞÜYOR.
-    Route::post("post", [ControllerFeed::class, 'add'])->name('veriEkle');
-
-});
-
- */
 
 
