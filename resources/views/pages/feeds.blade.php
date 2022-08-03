@@ -38,6 +38,7 @@
               <div class="rightTextarea">
                 <textarea name="name" rows="2" cols="15" id="feedname"></textarea>
                 <textarea name="name" rows="2" cols="15" id="price"></textarea>
+
               </div>
             </div>
         </div>
