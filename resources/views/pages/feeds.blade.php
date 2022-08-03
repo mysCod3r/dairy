@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     @include("pages\main-parts\head")
@@ -20,8 +20,9 @@
        <!-- FeedName-CONTAINER -->
        <div class="feed-container container">
          <div class="feed-name block">
-            @foreach($feeds as $feed)
-                <a id="{{$feed->id}}a" onclick="itemSingleClick({{$feed}})" ondblclick="itemDoubleClick({{$feed}})">{{$feed->feed_name}}</a><hr>
+
+         @foreach($feeds as $feed)
+                <a id="{{$feed->id}}a" onclick="itemSingleClick({{$feed}})" ondblclick="itemDoubleClick({{$feed}})">{{$feed->name}}</a><hr>
              @endforeach
          </div>
        </div>
