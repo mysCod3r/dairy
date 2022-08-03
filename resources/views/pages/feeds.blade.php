@@ -9,7 +9,7 @@
         <div class="section">
           @include("pages\main-parts\upbar")
      <div class="index-container">
-       <!--İçerik kısmı-->
+       <!--İçerik kısmı-->s
        <div class="main-container">
          <header class="block">
            <ul class="header-menu horizontal-list">
