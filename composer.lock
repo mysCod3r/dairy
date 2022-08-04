@@ -1280,16 +1280,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "fae52063ea7fb1d916baba787918c40fd3d8ab62"
+                "reference": "b71e80a3a8e8029e2ec8c1aa814b999609ce16dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/fae52063ea7fb1d916baba787918c40fd3d8ab62",
-                "reference": "fae52063ea7fb1d916baba787918c40fd3d8ab62",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/b71e80a3a8e8029e2ec8c1aa814b999609ce16dc",
+                "reference": "b71e80a3a8e8029e2ec8c1aa814b999609ce16dc",
                 "shasum": ""
             },
             "require": {
@@ -1341,7 +1341,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2022-07-25T13:44:55+00:00"
+            "time": "2022-07-29T21:33:30+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -6652,16 +6652,16 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v1.11.2",
+            "version": "v1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "0568bd257f0985645d5f4bb10f9f37ad9e46d414"
+                "reference": "40e0536e92385fa9f5c165b23ef544aad11e5fc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/0568bd257f0985645d5f4bb10f9f37ad9e46d414",
-                "reference": "0568bd257f0985645d5f4bb10f9f37ad9e46d414",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/40e0536e92385fa9f5c165b23ef544aad11e5fc5",
+                "reference": "40e0536e92385fa9f5c165b23ef544aad11e5fc5",
                 "shasum": ""
             },
             "require": {
@@ -6709,7 +6709,7 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "time": "2022-07-20T16:08:11+00:00"
+            "time": "2022-08-01T13:34:50+00:00"
         },
         {
             "name": "laravel/pint",

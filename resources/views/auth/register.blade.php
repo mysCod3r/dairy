@@ -1,59 +1,53 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    @include("pages\main-parts\head")
+    <title>Dairy NRC - Kaydol</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="section">
+          @include("pages\main-parts\upbar")
+     <div class="container">
+       <!--İçerik kısmı-->
+       <div class="login-box">
+  <h2>Dairy NRC</h2>
+  <form method="POST" action="{{ route('signup') }}">
+      @csrf
+    <div class="user-box">
+      <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="off" >
+      <label for="email" :value="__('Email')" >E-mail</label>
+    </div>
+    <div class="user-box">
+      <input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autocomplete="off">
+      <label for="name" :value="__('Name')">Kullanıcı adı</label>
+    </div>
+    <div class="user-box">
+      <input id="password" class="block mt-1 w-full"
+                      type="password"
+                      name="password"
+                      required autocomplete="new-password" autocomplete="off">
+      <label for="password" :value="__('Password')">Şifre</label>
+    </div>
+    <div class="user-box">
+      <input id="password_confirmation" class="block mt-1 w-full"
+                      type="password"
+                      name="password_confirmation" required>
+      <label for="password_confirmation" :value="__('Confirm Password')">Şifre</label>
+    </div>
+      <button href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Kaydol
+    </button>
+  </form>
+</div>
+     </div>
+    </div>
+      @include("pages\main-parts\sidebar")
+    </div>
+    <script src="{{URL::asset('/js/myjs.js')}}" charset="utf-8"></script>
+  </body>
+</html>
