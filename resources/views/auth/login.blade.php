@@ -16,6 +16,7 @@
   <x-auth-validation-errors class="mb-4" :errors="$errors" />
   <h2>Dairy NRC</h2>
   <form method="POST" action="{{ route('login') }}">
+      @csrf
     <div class="user-box">
       <input type="text" id="email" type="email" name="email" :value="old('email')" autocomplete="off">
       <label for="email" :value="__('Email')">E-Mail</label>
