@@ -13,3 +13,10 @@ $('.feeds').on('dblclick click',function (e) {
         $('.ffeatures_'+this.id).show();
     }
 })
+
+function convertToSlug(Text) {
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'');
+}

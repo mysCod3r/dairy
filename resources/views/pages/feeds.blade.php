@@ -5,7 +5,8 @@
       <title>Dairy NRC - Yemler </title>
   </head>
   <body>
-    <div class="wrapper">
+
+  <div class="wrapper">
         <div class="section">
           @include("pages\main-parts\upbar")
      <div class="index-container">
@@ -14,7 +15,7 @@
          <header class="block">
            <ul class="header-menu horizontal-list">
                <li><a href="#" class="header-menu-tab" id="show">Kategoriler</a></li>
-               <li><a href="#" class="header-menu-tab" id="hide"    >Gösterilen yemler</a></li>
+               <li><a href="#" class="header-menu-tab" id="hide">Gösterilen yemler</a></li>
            </ul>
        </header>
        <!-- FeedName-CONTAINER -->
@@ -29,16 +30,18 @@
            <div class="features-container container">
                <div class="feature block">
                    <div class="leftTextarea">
-                   @foreach($feeds[0] as $key => $value)
-                           <textarea cols="12" id="feature_{{$key}}"> {{$key}} </textarea>
-                   @endforeach
-                   </div>
-                   <div id="rightTextarea" class="rightTextarea">
                        @foreach($feeds as $feed)
+                           @foreach($feed as $key => $value)
+                               <textarea cols="12" hidden id="content_{{$key}}" class="denemeClass ffeatures_f{{$feed['id']}}">{{$key}}</textarea>
+                           @endforeach
+
+                       @endforeach</div>
+                   <div id="rightTextarea" class="rightTextarea">
+                   @foreach($feeds as $feed)
                            @foreach($feed as $key => $value)
                                <textarea cols="12" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{$value}} </textarea>
                            @endforeach
-                       @endforeach
+                   @endforeach
                    </div>
                </div>
            </div>
