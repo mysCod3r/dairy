@@ -3,7 +3,16 @@
    <!--profile image & text-->
    <div class="profile">
         <h3>Hoş geldiniz</h3>
-        <p>Kullanıcı adı</p>
+        <p>
+            @if(Route::has('login'))
+                @auth
+                {{ Auth::user()->name }}
+
+            @else
+            Giriş Yap
+            @endauth
+            @endif
+        </p>
    </div>
     <!--menu item-->
     <ul>

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function (){
+});
+
     Route::apiResource('feedcategory', BackendFeedCategoryController::class);
 
     Route::controller(BackendFeedController::class)->group(function (){
@@ -26,6 +28,5 @@ Route::middleware('auth:sanctum')->group(function (){
         Route::delete('feed/{feed}','destroy');
         Route::get('feed/by-category/{category}','byCategory');
     });
-});
 
 

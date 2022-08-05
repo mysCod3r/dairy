@@ -11,49 +11,29 @@ use Illuminate\Support\Facades\Auth;
 
 class   BackendFeedController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return FeedResource::collection(Feed::paginate(20));
-
+        return FeedResource::collection(Feed::all())->jsonSerialize();
+       // $feed =  FeedResource::collection(Feed::paginate(20));
+       // return $feed->jsonSerialize();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreFeedRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreFeedRequest $request)
     {
         $request["user_id"] = Auth::user()->id;
         $feed = Feed::create($request->all());
         return new FeedResource($feed);
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Feed  $feed
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        $category = Feed::findOrFail($id);
-        return new FeedResource($category);
+
+        return new FeedResource(Feed::findOrFail($id));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateFeedRequest  $request
-     * @param  \App\Models\Feed  $feed
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(UpdateFeedRequest $request, $id)
     {
         $feed =  Feed::findOrFail($id);
@@ -61,12 +41,7 @@ class   BackendFeedController extends Controller
         return new FeedResource($feed);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Feed  $feed
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $feed = Feed::findOrFail($id);

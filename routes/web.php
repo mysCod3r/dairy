@@ -13,12 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.main');
-});
 
-Route::get('/anasayfa', function () {
-    return view('pages.main');
-})->middleware(['auth'])->name('anasayfa');
+Route::view('/anasayfa', "pages.main")->name("anasayfa");
+
+
 
 require __DIR__.'/auth.php';
