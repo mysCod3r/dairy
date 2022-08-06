@@ -80,5 +80,6 @@ class FeedResource extends JsonResource
             'zn_bioavailability' => $this -> zn_bioavailability,
             'is_coarse_fodder' => $this -> is_coarse_fodder,
         ];
+
     }
 }

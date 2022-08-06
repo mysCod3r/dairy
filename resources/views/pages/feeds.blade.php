@@ -27,17 +27,18 @@
          </div>
        </div>
            <!-- Features-CONTAINER -->
+
            <div class="features-container container">
                <div class="feature block">
                    <div class="leftTextarea">
                        @foreach($feeds[0] as $key => $value)
-                           <textarea cols="12" id="feature_{{$key}}"> {{$key}} </textarea>
+                           <textarea cols="12" id="feature_{{$key}}"> {{preg_replace('/[^A-Za-z0-9\-]/',' ',strtoupper($key))}} </textarea>
                        @endforeach
                    </div>
                    <div id="rightTextarea" class="rightTextarea">
                    @foreach($feeds as $feed)
                            @foreach($feed as $key => $value)
-                               <textarea cols="12" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{$value}} </textarea>
+                               <textarea cols="12" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{strtoupper($value)}} </textarea>
                            @endforeach
                    @endforeach
                    </div>

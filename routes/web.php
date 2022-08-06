@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/anasayfa', "pages.main")->name("anasayfa");
+Route::view('/dashboard', "dashboard");
 
 
 
