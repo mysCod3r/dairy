@@ -21,8 +21,8 @@
        <!-- FeedName-CONTAINER -->
        <div class="feed-container container">
          <div class="feed-name block">
-         @foreach($feeds as $feed)
-                 <a class="feeds" id="f{{$feed['id']}}">{{$feed['name']}}</a><hr>
+             @foreach($feeds as $feed)
+                     <a class="feeds" id="f{{$feed['id']}}">{{$feed['name']}}</a><hr>
              @endforeach
          </div>
        </div>
@@ -30,12 +30,10 @@
            <div class="features-container container">
                <div class="feature block">
                    <div class="leftTextarea">
-                       @foreach($feeds as $feed)
-                           @foreach($feed as $key => $value)
-                               <textarea cols="12" hidden id="content_{{$key}}" class="denemeClass ffeatures_f{{$feed['id']}}">{{$key}}</textarea>
-                           @endforeach
-
-                       @endforeach</div>
+                       @foreach($feeds[0] as $key => $value)
+                           <textarea cols="12" id="feature_{{$key}}"> {{$key}} </textarea>
+                       @endforeach
+                   </div>
                    <div id="rightTextarea" class="rightTextarea">
                    @foreach($feeds as $feed)
                            @foreach($feed as $key => $value)

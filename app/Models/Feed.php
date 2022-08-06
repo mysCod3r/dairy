@@ -75,7 +75,6 @@ class Feed extends Model
         'se_bioavailability',
         'zn_bioavailability',
         'is_coarse_fodder',
-
     ];
 
 }
