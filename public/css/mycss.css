@@ -289,7 +289,20 @@ header {
 }
 
 .leftTextarea textarea {
+    text-align: center;
+    color: white;
+    background: #07354f;
     pointer-events: none;
+    overflow: hidden;
+    float: left;
+}
+
+.rightTextarea textarea{
+    text-align: center;
+    color: white;
+    background: #07354f;
+    overflow: hidden;
+    float: left;
 }
 
 /******************************************** Feeds Right CONTAINER *****************************************/

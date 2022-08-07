@@ -14,8 +14,15 @@
        <div class="main-container">
          <header class="block">
            <ul class="header-menu horizontal-list">
-               <li><a href="#" class="header-menu-tab" id="show">Kategoriler</a></li>
-               <li><a href="#" class="header-menu-tab" id="hide">Gösterilen yemler</a></li>
+               <li>
+                   <select name="deneme" id="">
+                       @foreach($categories as $category)
+                            <option value=""> {{$category['name']}} </option>
+                       @endforeach
+                   </select>
+               </li>
+               <li><a href="#" class="header-menu-tab">Gösterilen yemler</a></li>
+
            </ul>
        </header>
        <!-- FeedName-CONTAINER -->
@@ -32,13 +39,13 @@
                <div class="feature block">
                    <div class="leftTextarea">
                        @foreach($feeds[0] as $key => $value)
-                           <textarea cols="12" id="feature_{{$key}}"> {{preg_replace('/[^A-Za-z0-9\-]/',' ',strtoupper($key))}} </textarea>
+                           <textarea disabled cols="16" id="feature_{{$key}}"> {{preg_replace('/[^A-Za-z0-9\-]/',' ',strtoupper($key))}} </textarea>
                        @endforeach
                    </div>
                    <div id="rightTextarea" class="rightTextarea">
                    @foreach($feeds as $feed)
                            @foreach($feed as $key => $value)
-                               <textarea cols="12" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{strtoupper($value)}} </textarea>
+                               <textarea cols="15" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{strtoupper($value)}} </textarea>
                            @endforeach
                    @endforeach
                    </div>
@@ -47,9 +54,13 @@
         <!--Selected-CONTAINER -->
         <div class="selected-container container">
           <div class="selected-feed block">
+
           </div>
       </div>
-     <button class="feed_add" style="vertical-align:middle"><span>Ekle</span></button>
+      <form>
+
+          <button class="feed_add" style="vertical-align:middle"><span>Ekle</span></button>
+      </form>
      </div>
    </div>
       @include("pages\main-parts\sidebar")

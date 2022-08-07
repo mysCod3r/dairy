@@ -6,11 +6,18 @@ if(hamburger){
 }
 
 $('.feeds').on('dblclick click',function (e) {
-    const control = $("#" + this.id + "i").length > 0;
+    var control = $("#" + "x" + this.id).length > 0;
 
-    if (e.type === "dblclick" && !control){
-        $(this).clone(true,true).prop("id",this.id + "i").appendTo($('.selected-feed.block')).after("<hr>");
+    if (e.type === "dblclick"){
+        if (!control){
+            $(this).clone().prop("id", "x" + this.id).appendTo($('.selected-feed.block')).after("<hr>");
+        }else{
+            //body > div > div > div.index-container > div > div.selected-container.container > div > hr
+            //body > div > div > div.index-container > div > div.feed-container.container > div > hr:nth-child(2)
+            // $(".selected-feed > hr:nth-child(1)").remove();
 
+            $('#x' + this.id).remove();
+        }
     }else {
         $("[id^=c]").hide();   // $("[id^=c]") --> id si c ile başlayanlar             ######
         $('.ffeatures_'+this.id).show();
