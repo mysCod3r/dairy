@@ -5,6 +5,8 @@ if(hamburger){
     })
 }
 
+var features = $('.feed_features').length;
+
 $('.feeds').on('dblclick click',function (e) {
     var control = $("#" + "x" + this.id).length > 0;
 
@@ -12,18 +14,36 @@ $('.feeds').on('dblclick click',function (e) {
         if (!control){
             $(this).clone().prop("id", "x" + this.id).appendTo($('.selected-feed.block')).after("<hr>");
         }else{
-            //body > div > div > div.index-container > div > div.selected-container.container > div > hr
-            //body > div > div > div.index-container > div > div.feed-container.container > div > hr:nth-child(2)
-            // $(".selected-feed > hr:nth-child(1)").remove();
-
             $('#x' + this.id).remove();
         }
     }else {
-        $("[id^=c]").hide();   // $("[id^=c]") --> id si c ile başlayanlar             ######
+        $('.rightTextarea > textarea').hide();
         $('.ffeatures_'+this.id).show();
     }
 })
+var sayac = true;
 
+$('#addButton').click( function(){
+    if(sayac){
+        // $('.rightTextarea').empty();
+        $('.rightTextarea > textarea').hide();
+        for (var i = 0; i < features; i++){
+            $('#rightTextarea').append("<textarea cols='15' rows='2'> Yeni Yem Özelliği </textarea>").show();
+        }
+        sayac = false;
+    }else{
+        alert("Veri işleme prosedürü tamamlandı. Buton aktif.");
+        $('.rightTextarea > textarea').hide();
+
+        sayac = true;
+    }
+});
+
+window.onload = function (){
+
+}
 
 
 // https://www.w3schools.com/jquery/trysel.asp
+
+

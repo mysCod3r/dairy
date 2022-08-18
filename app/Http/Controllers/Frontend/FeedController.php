@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFeedRequest;
 use App\Http\Requests\UpdateFeedCategoryRequest;
+use App\Http\Requests\UpdateFeedRequest;
 use App\Http\Resources\FeedCategoryResource;
 use App\Http\Resources\FeedResource;
 use App\Models\Feed;
@@ -23,7 +24,23 @@ class FeedController extends Controller
 
     public function store(StoreFeedRequest $request){
         new FeedResource(Feed::create($request->all()));
-        return route('goFeeds');
+        return route('addFeeds');
+    }
+
+    public function update(UpdateFeedRequest $request, $id)
+    {
+        return "update fonksiyonu";
+//        $feed =  Feed::findOrFail($id);
+//        $feed->update($request->all());
+//        return new FeedResource($feed);
+    }
+
+
+    public function destroy($id)
+    {
+        $feed = Feed::findOrFail($id);
+        $feed->delete();
+        return response('', 204);
     }
 
 

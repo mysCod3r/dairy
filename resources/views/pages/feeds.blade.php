@@ -38,14 +38,14 @@
            <div class="features-container container">
                <div class="feature block">
                    <div class="leftTextarea">
-                       @foreach($feeds[0] as $key => $value)
-                           <textarea disabled cols="16" id="feature_{{$key}}"> {{preg_replace('/[^A-Za-z0-9\-]/',' ',strtoupper($key))}} </textarea>
+                       @foreach($feed as $key => $value)
+                           <textarea disabled rows="2" cols="16" class="feed_features" id="feature_{{$key}}"> {{preg_replace('/[^A-Za-z0-9\-]/',' ',strtoupper($key))}} </textarea>
                        @endforeach
                    </div>
                    <div id="rightTextarea" class="rightTextarea">
                    @foreach($feeds as $feed)
                            @foreach($feed as $key => $value)
-                               <textarea cols="15" hidden id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{strtoupper($value)}} </textarea>
+                               <textarea hidden rows="2" cols="15" id="content_{{$key}}" class="ffeatures_f{{$feed['id']}}">{{strtoupper($value)}} </textarea>
                            @endforeach
                    @endforeach
                    </div>
@@ -57,10 +57,7 @@
 
           </div>
       </div>
-      <form>
-
-          <button class="feed_add" style="vertical-align:middle"><span>Ekle</span></button>
-      </form>
+          <button class="feed_add" id="addButton" style="vertical-align:middle"><span>Ekle</span></button>
      </div>
    </div>
       @include("pages\main-parts\sidebar")
@@ -69,3 +66,7 @@
     </div>
   </body>
 </html>
+
+
+
+

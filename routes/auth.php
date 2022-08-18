@@ -68,6 +68,6 @@ Route::controller(HakkimizdaController::class)->group(function (){
 Route::controller(FeedController::class)->group(function (){
     Route::get("/feeds", [FeedController::class, 'index'])->name('goFeeds');
     Route::post("/feeds", [FeedController::class, 'store'])->name('addFeeds');
-
+    Route::resource("deneme", FeedController::class);
 
 });
